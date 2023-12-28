@@ -1,0 +1,51 @@
+managed implementation in class ZBP_HIER_MASTER unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_HIER_MASTER alias HierarchyMaster
+persistent table zhier_master
+draft table ZHIER_MASTER_D
+etag master LocalLastChanged
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Node;
+
+  field ( readonly )
+   NodeUUID,
+   LastChangedAt,
+   LastChangedBy,
+   LocalLastChanged;
+
+  field ( numbering : managed )
+   NodeUUID;
+
+  field ( readonly : update )
+   Node;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZHIER_MASTER
+  {
+    NodeUUID = node_uuid;
+    Node = node;
+    Description = description;
+    Drillstate = drillstate;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChanged = local_last_changed;
+  }
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_HIER_RELATIONS'
+define service ZUI_HIER_RELATIONS_O4 {
+  expose ZC_HIER_RELATIONS as HierarchyRelationship;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Hierarchy'
+@ObjectModel.leadingEntity.name: 'ZC_CLASS_HIER'
+define service ZUI_CLASS_HIER {
+  expose ZC_CLASS_HIER as Hierarchy;
+}

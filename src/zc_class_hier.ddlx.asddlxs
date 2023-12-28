@@ -1,0 +1,63 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: {
+        typeName: 'Hierarchy',
+        typeNamePlural: 'Hierarchies',
+        title: { type: #STANDARD, value: 'Node' }
+     },
+        presentationVariant: [{ sortOrder: [{ by: 'Node', direction: #ASC }],
+                                visualizations: [{ type: #AS_LINEITEM }]
+         }]
+ }
+
+
+annotate view ZC_CLASS_HIER with
+{
+  @UI: {
+    facet: [
+                {
+                    id: 'Node',
+                    purpose: #STANDARD,
+                    type:#IDENTIFICATION_REFERENCE,
+                    label: 'Node',
+                    position: 10
+                }
+     ]
+  }
+
+  @UI : {
+    lineItem:       [{ position: 20, importance: #HIGH,  label: 'Node' }],
+    identification: [{ position: 20 }]
+  }
+  Node;
+  
+  @UI: {
+      //selectionField: [{ position: 30 }],
+      lineItem:       [{ position: 30, importance: #HIGH,  label: 'Parent' }],
+      identification: [{ position: 30 }]
+    }
+    ParentNode;
+    
+   @UI: {
+      lineItem:       [{ position: 40, importance: #HIGH,  label: 'Description' }],
+      identification: [{ position: 40 }]
+    }
+    Description;
+    
+    @UI: {
+      lineItem:       [{ position: 50, importance: #HIGH, label: 'Is MRC?' }],
+      identification: [{ position: 50 }]
+    }
+    MRC;
+  
+    @UI: {
+      lineItem:       [{ position: 60, importance: #HIGH, label: 'Is INC ?' }],
+      identification: [{ position: 60 }]
+    }
+    INC;
+    
+     @UI: {
+      lineItem:       [{ position: 70, importance: #HIGH, label: 'Temporary' }],
+      identification: [{ position: 70 }]
+    }
+    TempValue;
+}

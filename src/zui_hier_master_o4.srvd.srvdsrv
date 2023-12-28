@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_HIER_MASTER'
+define service ZUI_HIER_MASTER_O4 {
+  expose ZC_HIER_MASTER as HierarchyMaster;
+}
