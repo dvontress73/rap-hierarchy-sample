@@ -24,7 +24,7 @@ CLASS zcl_generate_class_hier_data IMPLEMENTATION.
 
   ENDMETHOD.
   METHOD generate__data.
-
+* This method adds records to the table so the tree table UI displays data...
     data: hierarchy type table of zclass_hier.
 
 
