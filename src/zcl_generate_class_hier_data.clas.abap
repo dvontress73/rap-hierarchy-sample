@@ -19,7 +19,7 @@ CLASS zcl_generate_class_hier_data IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
     generate__data(  ).
-
+*A comment
     out->write( 'Data created' ).
 
   ENDMETHOD.
